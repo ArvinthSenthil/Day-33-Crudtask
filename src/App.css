@@ -102,4 +102,11 @@
   font-family: 'Caveat', cursive;
   font-size: x-large
 }
+.recipelist-container{
+  display: flex;
+  width: auto;
+  height: auto;
+}
+
+
 

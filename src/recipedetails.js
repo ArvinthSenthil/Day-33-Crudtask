@@ -5,6 +5,8 @@ import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import { useEffect } from "react";
 import { useState } from "react";
 import {API} from "./App.js"
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
 
 export function Recipedetails() {
   const { id } = useParams();
@@ -19,10 +21,9 @@ export function Recipedetails() {
 
   const his=useHistory();
   return (
-
-    <div className="recipe-new">
-      <iframe width="1000" height="536" src={recipelist.video} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
+    <Card className="recipelist-container">
+      <iframe className="recipe-video" width="1000" height="536" src={recipelist.video} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <CardContent>
       <div className="recipe-detailed-container">
         <h1 className="foodname">{recipelist.recipes_name} </h1>
    
@@ -31,7 +32,8 @@ export function Recipedetails() {
       <Button onClick={()=>his.goBack()} variant="contained" startIcon={<ArrowBackIosIcon />}>
   Back
 </Button>
-    </div>
+</CardContent>
+    </Card>
 
   );
 }
